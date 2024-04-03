@@ -1,22 +1,21 @@
-pipeline {
+pipeline{
     agent {
-        node{
+        node {
             label 'jenkins-slave-node'
         }
     }
     stages {
-        stage ('checkoutcode') {
-            steps{
-                git branch: 'main' , url: 'https://github.com/seema-project/java-web-app.git'
+        stage ('checkout code'){
+            steps {
+                git branch: 'main', url: 'https://github.com/seema-project/java-web-app.git'
             }
         }
-        stage ('buildcode'){
+        stage ('build code'){
             steps{
                 sh '/opt/maven/bin/mvn clean package'
             }
         }
-       
 
-    }
-}
     
+    }
+}
