@@ -17,5 +17,5 @@ pipeline {
 				deploy adapters: [ tomcat9(url: 'http://54.172.160.13:8080/', credentialsId: 'tomcatCred')], war:'target/*.war'
 			}
 		}
-    }
+    }
 }
